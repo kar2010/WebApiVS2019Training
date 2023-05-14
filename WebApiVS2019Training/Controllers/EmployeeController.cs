@@ -27,8 +27,8 @@ namespace WebApiVS2019Training.Controllers
             return empts;
         }
         [HttpGet]
-        [Route("{id:employee}")]
-        public async Task<Employee> Get(int id=0)
+        [Route("GetEmployee")]
+        public async Task<Employee> GetEmployee(int id)
         {
             var empts =await sampleDB.Employees.Include(e => e.Department).SingleOrDefaultAsync(x=>x.Id==id);
             return empts;
